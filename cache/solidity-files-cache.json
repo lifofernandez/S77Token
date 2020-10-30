@@ -377,44 +377,6 @@
         "Address"
       ]
     },
-    "/root/Documents/Academicos/UTN/BLOCKCHAIN/S77Token/contracts/Simple777Sender.sol": {
-      "lastModificationDate": 1603966798380,
-      "sourceName": "contracts/Simple777Sender.sol",
-      "solcConfig": {
-        "version": "0.6.7",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC777/IERC777.sol",
-        "@openzeppelin/contracts/introspection/IERC1820Registry.sol",
-        "@openzeppelin/contracts/introspection/ERC1820Implementer.sol",
-        "@openzeppelin/contracts/token/ERC777/IERC777Sender.sol"
-      ],
-      "versionPragmas": [
-        "^0.6.0"
-      ],
-      "artifacts": [
-        "Simple777Sender"
-      ]
-    },
     "/root/Documents/Academicos/UTN/BLOCKCHAIN/S77Token/node_modules/@openzeppelin/contracts/introspection/ERC1820Implementer.sol": {
       "lastModificationDate": 1603967148988,
       "sourceName": "@openzeppelin/contracts/introspection/ERC1820Implementer.sol",
@@ -483,8 +445,151 @@
         "IERC1820Implementer"
       ]
     },
+    "/root/Documents/Academicos/UTN/BLOCKCHAIN/S77Token/node_modules/@openzeppelin/contracts/access/AccessControl.sol": {
+      "lastModificationDate": 1603967148985,
+      "sourceName": "@openzeppelin/contracts/access/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.6.7",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/EnumerableSet.sol",
+        "../utils/Address.sol",
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/root/Documents/Academicos/UTN/BLOCKCHAIN/S77Token/node_modules/@openzeppelin/contracts/utils/EnumerableSet.sol": {
+      "lastModificationDate": 1603967148988,
+      "sourceName": "@openzeppelin/contracts/utils/EnumerableSet.sol",
+      "solcConfig": {
+        "version": "0.6.7",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "EnumerableSet"
+      ]
+    },
+    "/root/Documents/Academicos/UTN/BLOCKCHAIN/S77Token/contracts/Simple777Sender.sol": {
+      "lastModificationDate": 1604024510917,
+      "sourceName": "contracts/Simple777Sender.sol",
+      "solcConfig": {
+        "version": "0.6.7",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC777/IERC777.sol",
+        "@openzeppelin/contracts/introspection/IERC1820Registry.sol",
+        "@openzeppelin/contracts/introspection/ERC1820Implementer.sol",
+        "@openzeppelin/contracts/token/ERC777/IERC777Sender.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "Simple777Sender"
+      ]
+    },
+    "/root/Documents/Academicos/UTN/BLOCKCHAIN/S77Token/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1603967148998,
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.6.7",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../GSN/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
     "/root/Documents/Academicos/UTN/BLOCKCHAIN/S77Token/contracts/Simple777Token.sol": {
-      "lastModificationDate": 1604021690304,
+      "lastModificationDate": 1604045522064,
       "sourceName": "contracts/Simple777Token.sol",
       "solcConfig": {
         "version": "0.6.7",
@@ -509,7 +614,8 @@
         }
       },
       "imports": [
-        "@openzeppelin/contracts/token/ERC777/ERC777.sol"
+        "@openzeppelin/contracts/token/ERC777/ERC777.sol",
+        "@openzeppelin/contracts/access/Ownable.sol"
       ],
       "versionPragmas": [
         "^0.6.0"

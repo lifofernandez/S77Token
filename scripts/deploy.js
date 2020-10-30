@@ -1,5 +1,3 @@
-// require('@openzeppelin/test-helpers/configure')(
-// { provider: web3.currentProvider, environment: 'truffle' });
 
 const Web3 = require("web3");
 const provider = new Web3.providers.HttpProvider(
@@ -9,24 +7,30 @@ const web3 = new Web3('http://');
 web3.setProvider(provider);
 require('@openzeppelin/test-helpers/configure')(
   {
-//    provider: web3.currentProvider,
-//    environment: 'hardhat'
+    provider: web3.currentProvider,
+    singletons:{
+      abstraction:'hardhat',
+    }
   }
 );
 
+const {
+  BN,
+  constants,
+  expetEvent,
+  expetRevert,
+  singletons
+} = require('@openzeppelin/test-helpers');
 
 //const {
 //  accounts,
 //  contracts
 //} = require('@openzeppelin/test-environment');
-
-const {
-//  BN,
-//  constants,
-//  expetEvent,
-//  expetRevert,
-  singletons
-} = require('@openzeppelin/test-helpers');
+//
+//console.log(
+//  "contratos",
+//  accounts
+//);
 
 async function main() {
 
@@ -35,6 +39,11 @@ async function main() {
     network, 
     accounts
   ] = await ethers.getSigners();
+
+  console.log(
+    "Cuentas",
+    accounts
+  );
 
   if ( network === 'development' ) {
     // In a test environment an ERC777 token
@@ -49,18 +58,34 @@ async function main() {
   
   console.log(
     "Account balance:",
-    (await deployer.getBalance()).toString()
+    ( await deployer.getBalance() ).toString()
   );
 
+  const operadores =  [
+//    token.address,
+    deployer.address
+  ];
+  
   const Simple777Token = await ethers.getContractFactory(
     "Simple777Token"
   );
-  const token = await Simple777Token.deploy();
-//  console.log("Token address:", token.address);
-//
-//  const Simple777Recipient = await ethers.getContractFactory(
-//    "Simple777Recipient"
-//  );
+  
+  // const bn = 10000 * 10 ** 18;
+  // const is = new BN(1)
+  const token = await Simple777Token.deploy(
+    100000000
+    //deployer.address
+    //operadores
+  );
+  console.log("Token address:", token.address);
+
+  const Simple777Recipient = await ethers.getContractFactory(
+    "Simple777Recipient"
+  );
+//   await deployer.deploy(Simple777Recipient, token.address);
+  const receipt = await Simple777Token.deploy(
+    token.address
+  );
 
 }
 
@@ -91,5 +116,6 @@ main()
 // 
 //   await deployer.deploy(Simple777Recipient, token.address);
 // };
+
 
 

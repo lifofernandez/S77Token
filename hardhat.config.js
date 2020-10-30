@@ -8,9 +8,16 @@ require("@nomiclabs/hardhat-waffle");
 //};
 module.exports = {
   solidity: "0.6.7",
+  //networks: {
+  //  development: {
+  //    url: '127.0.0.1:8454',
+  //  }
+  //}
   networks: {
-    development: {
-      url: '127.0.0.1:8454',
+    hardhat: {
+      blockGasLimit: 12000000
     }
   }
 };
+
+
